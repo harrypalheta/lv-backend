@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Produto {
@@ -13,16 +14,20 @@ public class Produto {
     private long id;
 
     @NotBlank
+    @NotNull
     private String nome;
 
     @NotBlank
+    @NotNull
     private String descricao;
 
     @NotBlank
-    private double preco;
+    @NotNull
+    private String preco;
 
     @NotBlank
-    private Integer qtde;
+    @NotNull
+    private String qtde;
 
     public long getId() {
         return id;
@@ -60,28 +65,28 @@ public class Produto {
     /**
      * @return the preco
      */
-    public double getPreco() {
+    public String getPreco() {
         return preco;
     }
 
     /**
      * @param preco the preco to set
      */
-    public void setPreco(double preco) {
+    public void setPreco(String preco) {
         this.preco = preco;
     }
 
     /**
      * @return the qtde
      */
-    public Integer getQtde() {
+    public String getQtde() {
         return qtde;
     }
 
     /**
      * @param qtde the qtde to set
      */
-    public void setQtde(Integer qtde) {
+    public void setQtde(String qtde) {
         this.qtde = qtde;
     }
 
