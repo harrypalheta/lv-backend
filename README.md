@@ -18,22 +18,56 @@ Java version: 1.8.0_171, vendor: Oracle Corporation, runtime: C:\Program Files\J
 Default locale: pt_BR, platform encoding: Cp1252
 OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 ```
+* GIT
 
 ## Inicializando o server
+Após o `clone`. Entre na pasta do projeto.
 ```sh
-java -jar lv-backend.jar
+cd ~/projetos/lv-backend
 ```
-## Build
-Entre na pasta do seu projeto.
+Rode o arquivo compilado `lv-backend*.jar` no terminal:
 ```sh
-cd ~/projetos/loja-virtual
+java -jar lv-backend*.jar
 ```
-Rode o projeto:
+>Estará acessível em `http:localhost:9000`
+## Rodando o projeto pelo código fonte
+Na pasta do projeto, execute o comando:
 ```sh
 mvn spring-boot:run
 ```
+>Aqui você precisará do `H2 Database Engine` instalado.
 ## Gerando o .jar
 Na pasta do seu projeto rode:
 ```sh
 mvn package
 ```
+## Acessando o Banco de Dados
+Após carregar o server, vocé poderá acessar o Banco de Dados em `http://localhost:9000/h2`.
+O usuário é `h2sa` e a senha é `admin`.
+
+## Métodos
+O prefixo de todos é  `http://localhost:9000/`.
+ Método | Recurso | Descricão
+ --------|---------|----------
+ GET     |/produtos| Lista todos os produtos criados
+ POST    |/produtos/create|Adiciona um produto
+ PUT     |/produtos/update|Altera dados de um produto existente
+ DELETE  |/produtos/delete|Exclue um produto
+
+## Requisição
+A requisição suportada é em `json`.
+>Content-Type: application/json
+
+## Dados
+Os campos disponíveis estão no exemplo abaixo:
+
+```json
+{
+    "id": 1,
+    "nome": "Computador",
+    "descricao": "Antigo",
+    "preco": "100,00",
+    "qtde": "10"
+}
+```
+>Todos os campos são obrigatórios* e do tipo `String`.
