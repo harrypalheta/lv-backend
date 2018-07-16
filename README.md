@@ -29,7 +29,7 @@ Rode o arquivo compilado `lv-backend*.jar` no terminal:
 ```sh
 java -jar lv-backend*.jar
 ```
->Estará acessível em `http:localhost:9000`
+>O server estará acessível em `http://localhost:9000`
 ## Rodando o projeto pelo código fonte
 Na pasta do projeto, execute o comando:
 ```sh
@@ -47,12 +47,13 @@ O usuário é `h2sa` e a senha é `admin`.
 
 ## Métodos
 O prefixo de todos é  `http://localhost:9000/`.
- Método | Recurso | Descricão
- --------|---------|----------
- GET     |/produtos| Lista todos os produtos criados
- POST    |/produtos/create|Adiciona um produto
- PUT     |/produtos/update|Altera dados de um produto existente
- DELETE  |/produtos/delete|Exclue um produto
+
+Método | Recurso | Descricão
+-------|---------|----------
+GET|/produtos| Lista todos os produtos criados
+POST|/produtos/create|Adiciona um produto
+PUT|/produtos/update|Altera dados de um produto existente
+DELETE|/produtos/delete|Exclue um produto
 
 ## Requisição
 A requisição suportada é em `json`.
